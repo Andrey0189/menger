@@ -5,7 +5,7 @@ module.exports = {
   args: ['[ID | название]'],
   run: async (message, args) => {
     const matchArgs = new RegExp(args[0], 'i')
-    let guild = Bot.client.guilds.cache.find(g => g.id === args[0] || g.name.match(matchArgs)) || message.guild;
+    let guild = Bot.client.guilds.cache.find(g => g.id === args[0] || (args[0] && g.name.match(matchArgs))) || message.guild;
 
     const types = ['NONE', 'LOW', 'MEDIUM', 'HIGH', 'VERY_HIGH']
     const translated = ['Нет', 'Нужен проверенный e-mail', 'Аккаунту должно быть больше 5 минут', 'Нужно быть на сервере больше 10 минут', 'Нужен подвтержденный номер телефона']
