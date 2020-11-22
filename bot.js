@@ -67,7 +67,7 @@ class Bot {
 
         _this.client.on('ready', () => {
 
-            this.footer = `<> with ❤ by ANDREY#2623`
+            this.footer = `<> with ❤ by ANDREY#2623`;
             this.prefixes = ['=', `<@${this.client.user.id}>`];
             
             setInterval(() => _this.client.user.setActivity(`${_this.prefixes[0]}help | ${_this.client.guilds.cache.size} servers`, {type: 'PLAYING'}), 12e4);
@@ -78,6 +78,7 @@ class Bot {
                 if (err) throw err;
                 cmds.forEach(command => {
                     const cmd = require(`./Commands/${command}.js`);
+                    console.log(cmd)
                     this.commands.push({
                         name: cmd.name,
                         regex: cmd.regex,
