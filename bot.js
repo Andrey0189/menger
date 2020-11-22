@@ -77,7 +77,7 @@ class Bot {
             fs.readdir('./Commands', (err, cmds) => {
                 if (err) throw err;
                 cmds.forEach(command => {
-                    const cmd = require(`./Commands/${command}.js`);
+                    const cmd = require(`./Commands/${command}`);
                     console.log(cmd)
                     this.commands.push({
                         name: cmd.name,
