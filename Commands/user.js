@@ -5,8 +5,8 @@ module.exports = {
   args: ['[@пользователь | тэг | ID]'],
   example: 'user @чел#1234',
   run: async (message, args) => {
-    const matchArgs = args[0]? new RegExp(args[0], 'i') : '';
-    const user = message.mentions.users.first() || Bot.client.users.cache.find(u => u.id === args[0] || u.tag.match(matchArgs)) || message.author;
+    const matchArgs = new RegExp(args[0], 'i');
+    const user = message.mentions.users.first() || Bot.client.users.cache.find(u => u.id === args[0] || (args[0] && u.tag.match(matchArgs))) || message.author;
     const member = message.guild.member(user)
 
     const translatedStates = ['Браузера 🌐', 'Клиента 🖥️', 'Телефона 📱'];
