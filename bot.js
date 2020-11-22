@@ -67,7 +67,7 @@ class Bot {
 
         _this.client.on('ready', () => {
 
-            this.footer = `<> with ❤ by ANDREY#2623`;
+            this.footer = `<> with ❤ by ANDREY#2623`
             this.prefixes = ['=', `<@${this.client.user.id}>`];
             
             setInterval(() => _this.client.user.setActivity(`${_this.prefixes[0]}help | ${_this.client.guilds.cache.size} servers`, {type: 'PLAYING'}), 12e4);
@@ -121,7 +121,7 @@ class Bot {
                 .setAuthor(message.author.tag, message.author.avatarURL())
                 .setDescription(message.content)
                 .setColor(_this.colors.main)
-                .setFooter(message.guild.name);
+                .setFooter(message.guild.name, message.guild.iconURL());
                 _this.client.channels.cache.get(_this.channels.commands).send(embed);
             };
         };
