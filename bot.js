@@ -114,6 +114,7 @@ class Bot {
             const cmd = _this.commands.find(c => command.match(c.regex));
             
             if (cmd && (!cmd.private || _this.whitelist.includes(message.author.id))) {
+                console.log(cmd)
                 cmd.run(message, args);
 
                 if (message.guild.id === '776787554489860096') return
