@@ -1,7 +1,5 @@
 # Menger
-Time for new Bot!
-
-Menger is a Discord bot with some cool commands ¯\_(ツ)_/¯
+Time for new Bot!\nMenger is a Discord bot with some cool commands ¯\_(ツ)_/¯
 
 
 Me: ANDREY#2623
