@@ -2,7 +2,7 @@ module.exports = {
   name: 'role',
   regex: /role/,
   desc: 'Информация о роли',
-  args: ['[@роль | название роли]'],
+  args: ['<@роль | название роли>'],
   example: 'role @Moderator',
   run: async (message, args) => {
     const matchArgs = new RegExp(args[0], 'i')
