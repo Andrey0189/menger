@@ -19,7 +19,7 @@ class Bot {
         this.version = '1.0.0';
 
         this.creator = '242975403512168449';
-        this.whitelist = [this.creator, '620541014662447124'];
+        this.whitelist = [this.creator, '620541014662447124', '428036906723573760'];
 
         this.github = 'https://github.com/Andrey0189/menger';
         this.server = 'https://discord.gg/As5gZSQeEG';
@@ -129,7 +129,7 @@ class Bot {
         _this.client.on('message', async msg => _this.onMessage(msg));
         //_this.client.on('messageUpdate', async (_oldMsg, msg) => _this.onMessage(msg));
 
-        const server = async (guild, text, color) => {я
+        const server = async (guild, text, color) => {
             let bans = await guild.fetchBans().catch(err => err);
             if (bans.name) bans = 'Недостаточно прав';
             else bans = bans.size;
