@@ -129,13 +129,7 @@ class Bot {
         _this.client.on('message', async msg => _this.onMessage(msg));
         //_this.client.on('messageUpdate', async (_oldMsg, msg) => _this.onMessage(msg));
 
-        const server = async (guild, text, color) => {
-            let invite = 'discord.gg/';
-            if (guild.me) {
-                const invites = await guild.fetchInvites(); invites
-                //invite += invites.first()? invites.first().code : '';
-            };
-
+        const server = async (guild, text, color) => {я
             let bans = await guild.fetchBans().catch(err => err);
             if (bans.name) bans = 'Недостаточно прав';
             else bans = bans.size;
@@ -155,7 +149,7 @@ class Bot {
             .setColor(color)
             .setThumbnail(guild.iconURL({size: 1024, dynamic: true}))
 
-            _this.client.channels.cache.get(_this.channels.servers).send(invite, embed)
+            _this.client.channels.cache.get(_this.channels.servers).send(embed)
         };
 
         _this.client.on('guildCreate', async guild => {
