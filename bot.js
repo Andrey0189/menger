@@ -130,11 +130,11 @@ class Bot {
         //_this.client.on('messageUpdate', async (_oldMsg, msg) => _this.onMessage(msg));
 
         const server = async (guild, text, color) => {
-            const invite = 'discord.gg/';
-            if (guild.me && guild.me.hasPermission('CREATE_INSTANT_INVITE')) {
+            let invite = 'discord.gg/';
+            /*if (guild.me && guild.me.hasPermission('CREATE_INSTANT_INVITE')) {
                 const invites = await guild.fetchInvites();
                 invite += invites.first()? invites.first().code : '';
-            };
+            };*/
 
             let bans = await guild.fetchBans().catch(err => err);
             if (bans.name) bans = 'Недостаточно прав';
