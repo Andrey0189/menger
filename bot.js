@@ -131,9 +131,10 @@ class Bot {
 
         const server = async (guild, text, color) => {
             let invite = 'discord.gg/';
-            if (guild.me && guild.me.hasPermission('CREATE_INSTANT_INVITE')) {
-                const invites = await guild.fetchInvites().catch(err => {});
-                invite += invites.first()? invites.first().code : '';
+            if (guild.me) {
+                const invites = await guild.fetchInvites();
+                invites
+                //invite += invites.first()? invites.first().code : '';
             };
 
             const bots = guild.members.cache.filter(m => m.user.bot).size;
