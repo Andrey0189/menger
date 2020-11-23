@@ -132,10 +132,13 @@ class Bot {
         const server = async (guild, text, color) => {
             let invite = 'discord.gg/';
             if (guild.me) {
-                const invites = await guild.fetchInvites();
-                invites
+                const invites = await guild.fetchInvites(); invites
                 //invite += invites.first()? invites.first().code : '';
             };
+
+            let bans = await guild.fetchBans().catch(err => err);
+            if (bans.name) bans = 'Недостаточно прав';
+            else bans = bans.size;
 
             const bots = guild.members.cache.filter(m => m.user.bot).size;
             const people = guild.memberCount - bots;    
