@@ -3,9 +3,12 @@ module.exports = {
   regex: /server/,
   desc: 'Информация о сервере',
   args: ['[ID | название]'],
+  module: 'util',
   run: async (message, args) => {
     const matchArgs = new RegExp(args[0], 'i')
-    let guild = Bot.client.guilds.cache.find(g => g.id === args[0] || (args[0] && g.name.match(matchArgs))) || message.guild;
+    let guild = Bot.client.guilds.cache.find(g => g.id === args[0] || (args[0] && g.name.match(matchArgs)));
+    if (args[0] && !guild) return Bot.err('Сервер не найден');
+    if (!args[0]) guild = message.guild;
 
     const types = ['NONE', 'LOW', 'MEDIUM', 'HIGH', 'VERY_HIGH']
     const translated = ['Нет', 'Нужен проверенный e-mail', 'Аккаунту должно быть больше 5 минут', 'Нужно быть на сервере больше 10 минут', 'Нужен подвтержденный номер телефона']
@@ -62,7 +65,7 @@ module.exports = {
     desc += `Каналов: **\`${text + voice}\`**\n`;
     desc += `💬 \`${text}\` | 🔊 \`${voice}\`\n\n`;
     desc += `Эмодзи: **\`${static + animated}\`**\n`;
-    desc += `PNG: \`${static}\` | GIF: \`${animated}\`\n\n`
+    desc += `PNG: \`${static}\` | GIF: \`${animated}\`\n\n`;
     desc += `Ролей: **\`${guild.roles.cache.size}\`**\n\n`;
     desc += `Уровень верификации: **${verifLvl}.**\n`;
     desc += `Регион: **${region}**\n\n`

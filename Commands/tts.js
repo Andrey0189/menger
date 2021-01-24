@@ -4,6 +4,7 @@ module.exports = {
   desc: 'Произнести любую фразу на русском или на английском',
   args: ['<ru | en>', '<текст>'],
   example: 'tts ru привет',
+  private: true,
   run: (message, args) => {
     if (!args[0]) return Bot.err('Не указан язык. (en или ru)');
     if (!args[1]) return Bot.err('Не указан текст');

@@ -4,6 +4,7 @@ module.exports = {
   desc: 'Информация об эмодзи на сервере',
   args: ['[эмодзи]'],
   example: 'emoji :lol:',
+  module: 'util',
   run: async (message, args) => {
     if (!args[0]) return Bot.err('Пустотный эмодзи???');
     const matchArgs = new RegExp(args[0], 'i');
@@ -20,7 +21,7 @@ module.exports = {
     desc += `Добавил: ${author}\n\n`;
     desc += `Идентификатор: **\`${emoji}\`**\n`;
     desc += `[Ссылка](${emoji.url})`;
-
+    
     const embed = new Bot.Discord.MessageEmbed()
     .setTitle(`Эмодзи ${emoji}`)
     .setColor(Bot.colors.main)

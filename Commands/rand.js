@@ -4,6 +4,7 @@ module.exports = {
   args: ['[число]', '[число]'],
   desc: 'Генератор случайных чисел',
   example: 'rand 1 100',
+  module: 'util',
   run: async (message, args) => {
       let num1 = parseInt(args[0]);
       let num2 = parseInt(args[1]);

@@ -4,10 +4,11 @@ module.exports = {
   desc: 'Информация о роли',
   args: ['<@роль | название роли>'],
   example: 'role @Moderator',
+  module: 'util',
   run: async (message, args) => {
     const matchArgs = new RegExp(args[0], 'i')
-    let role = message.mentions.roles.first() || message.guild.roles.cache.find(r => r.name.match(matchArgs));
-    if (!role) return Bot.err('Такой роли не существует');
+    const role = message.mentions.roles.first() || message.guild.roles.cache.find(r => r.name.match(matchArgs) || r.id === args[0]);
+    if (!role) return Bot.err('Такой роли на этом сервере не существует');
 
     const yesNo = (boolean) => boolean? Bot.emojis.yes : Bot.emojis.no;
 

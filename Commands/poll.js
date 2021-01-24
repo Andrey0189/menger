@@ -8,6 +8,7 @@ module.exports = {
   args: ['<Вопрос; Вариант1; Вариант2; и т. д.>'],
   example: 'poll Пепси или кола?; Пепси; Кола; Водичка',
   desc: 'Голосование',
+  module: 'util',
   run: (message, args) => {
     const poll = message.content.slice(Bot.prefixes[0].length).trim().split(/;+/g);
 

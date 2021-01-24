@@ -4,6 +4,7 @@ module.exports = {
   args: ['<опции>'],
   desc: 'Отправить эмбед',
   example: 'embed {title: Лес}{desc: Лес — экологическая система, в которой главной жизненной формой являются деревья}{url: https://ru.wikipedia.org/wiki/Лес }{image: https://cdn.discordapp.com/attachments/496235143443382272/536469341525377025/1441200743_1427616465.png }{field: Опушка леса, value: Опушка леса — полоса перехода к смежному типу растительности}{color: #539b0c}{footer: Материалы взяты с википедии, icon: https://cdn.discordapp.com/attachments/492028897538605066/536471533720436746/Wikipedia-logo-v2.png }{author: Wikipedia, icon: https://cdn.discordapp.com/attachments/492028897538605066/536471533720436746/Wikipedia-logo-v2.png }{thumb: https://cdn.discordapp.com/attachments/492028897538605066/536472233015771136/s1200.png }',
+  module: 'util',
   run: (message, args) => {
       let text = args.join(' ').replace(/\n/g, '\\n');
       let code = 'const embed = new Discord.MessageEmbed()';

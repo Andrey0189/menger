@@ -2,6 +2,7 @@ module.exports = {
   name: 'info',
   regex: /info/,
   desc: 'Информация о боте',
+  module: 'misc',
   run: (message) => {
       const embed = new Bot.Discord.MessageEmbed()
       .setAuthor('Информация о боте', message.author.avatarURL())
