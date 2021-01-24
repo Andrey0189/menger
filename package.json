@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.4.1",
-    "google-tts-api": "0.0.5",
     "mongoose": "^5.10.17",
     "nodejs": "0.0.0",
     "npm": "^6.14.9"
